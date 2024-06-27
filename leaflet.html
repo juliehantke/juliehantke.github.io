@@ -153,7 +153,7 @@
 		}
 
 		// Add explicit entry for 0 values being white
-    labels.unshift(`<i style="background:#FFFFFF"></i> 0`); 
+    labels.unshift(`<i style="background:#FFFFFF"></i> no data`); 
 
     div.innerHTML = labels.join('<br>');
     return div;
@@ -169,7 +169,9 @@
 <h3>
 	*estimated proportion of the population with habitual food consumption insufficient to provide the dietary energy levels required to maintain a normal, healthy, active lifestyle.
 </h3>
+<br>
 
+<h2>This map was created in QGIS. First datasets from different sources were carefully selected. After importing both into QGIS the layers with different origin were joined together. It took careful consideration to classifying data and to decide how to handle missing data. This might have been the biggest challenge in this assignment. Some countries had reported 0% hunger, while this is impossible to achieve, even in developed countries for the reason that eating disorders wil always be prevalent. A decision had to be made on whether to handle countries that submitted a value of zero should be handled differently from countries that did not report any data. For the reason that the value zero is impossible to achieve in a country, this data was seen as invalid and therefore classified into the "no data" category. After stylising the map and legend in QGIS, the decision to transfer the map to a leaflet was made, so that the map can be interactive. Everything was stylised again in javascript. I learnt a lot from this, as I wanted to add features that were not in the code yet. This taught me how to use the internet as an educational resource. The rush I felt when my leaflet was running how I wanted it to, was the most exciting part of the process.
 
 </body>
 </html>
