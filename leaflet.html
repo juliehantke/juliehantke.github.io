@@ -32,7 +32,7 @@
 </head>
 <body>
 <h2>
-<b>SDG indictator 2.1.1: Prevalence of Undernourishment<br><br> <b>Measures progress towards UN SDG target 2.1: By 2030, end hunger and ensure access by all people, in particular the poor and people in vulnerable situations, including infants, to safe, nutritious and sufficient food all year round. <br><br> <b>test
+<b>SDG indictator 2.1.1: Prevalence of Undernourishment<br><br> <b>Measures progress towards UN SDG target 2.1: By 2030, end hunger and ensure access by all people, in particular the poor and people in vulnerable situations, including infants, to safe, nutritious and sufficient food all year round. <br><br> <b>The target helps reach SDG 2, "Zero Hunger", the realisation of a world free of hunger by 2030. <!-- for more info consult https://www.un.org/sustainabledevelopment/hunger/ -->
 
 </h2>
 <div id='map'></div>
@@ -59,8 +59,9 @@
 
 		//UPDATE to call your own data - the name after "props" is the attribute name - look in your js file to find the attribute to call
 	info.update = function (props) {
-		const contents = props ? `<b>${props.ADMIN}</b><br />${props.new18} % of total land that is forest` : 'Hover over a state';
-		this._div.innerHTML = `<h4>15.1.1 Forest area as a proportion of total land area</h4>${contents}`;
+		const contents = props ? `<b>${props.ADMIN}</b><br />${props.new18} as a proportion of the population (%)` : 'Hover over a state';
+		this._div.innerHTML = `<h4>15.1.1 Prevalence of Undernourishment</h4>${contents}`;
+		
 	};
 
 	info.addTo(map);
