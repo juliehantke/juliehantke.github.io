@@ -59,8 +59,8 @@
 
 		//UPDATE to call your own data - the name after "props" is the attribute name - look in your js file to find the attribute to call
 	info.update = function (props) {
-		const contents = props ? `<b>${props.ADMIN}</b><br />${props.new18} as a proportion of the population (%)` : 'Hover over a state';
-		this._div.innerHTML = `<h4>15.1.1 Prevalence of Undernourishment</h4>${contents}`;
+		const contents = props ? `<b>${props.ADMIN}</b><br />${props.new18} %` : 'as a proportion of the population (%) <br><br>Hover over a state';
+		this._div.innerHTML = `<h4>15.1.1 Prevalence of Undernourishment*</h4>${contents}`;
 		
 	};
 
@@ -69,13 +69,13 @@
 
 	// get color depending on population density value //UPDATE for our own legend
 	function getColor(d) {
-		return d > 100 ? '#005a32' :
+		return d > 49 ? '#005a32' :
 			//d > 100  ? '#238b45' :
 			//d > 80  ? '#41ab5d' :
-			d > 49  ? '#74c476' :
-			d > 25   ? '#a1d99b' :
-			d > 10   ? '#c7e9c0' :
-			d > 0   ? '#e5f5e0' : '#f7fcf5';
+			 d > 25 ? '#BD0026' :  // bright red for highest category
+           d > 10  ? '#FC4E2A' :
+           d > 2   ? '#FD8D3C' :
+           d > 0   ? '#FD8D3C' : '#FFFFFF';  // white for lowest category
 	}
 
 //update the fill color to your variable 
@@ -138,7 +138,7 @@
 	legend.onAdd = function (map) {
 
 		const div = L.DomUtil.create('div', 'info legend');
-		const grades = [0, 10, 25, 49, 100];
+		const grades = [0, 10, 25];
 		const labels = [];
 		let from, to;
 
@@ -146,17 +146,29 @@
 			from = grades[i];
 			to = grades[i + 1];
 
-			labels.push(`<i style="background:${getColor(from + 1)}"></i> ${from}${to ? `&ndash;${to}` : '+'}`);
+			 labels.push(
+                `<i style="background:${getColor(from + 1)}"></i> ${from}` + 
+                (to ? `&ndash;${to}` : (from === 25 ? '&ndash;49' : '+'))
+            );
 		}
 
-		div.innerHTML = labels.join('<br>');
-		return div;
-	};
+		// Add explicit entry for 0 values being white
+    labels.unshift(`<i style="background:#FFFFFF"></i> 0`); 
+
+    div.innerHTML = labels.join('<br>');
+    return div;
+};
+
+
+	
 
 	legend.addTo(map);
 
 </script>
 
+<h3>
+	*estimated proportion of the population with habitual food consumption insufficient to provide the dietary energy levels required to maintain a normal, healthy, active lifestyle.
+</h3>
 
 
 </body>
