@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Phantom by HTML5 UP</title> <!--change this!-->
+		<title>Digital Terrain Model</title> <!--change this!-->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -45,16 +45,35 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Relative Elevation Model</h1>
+							
 
-								<p>of the East of Terschelling. <br>
-								This map was created in QGIS, with the use of DTM data of the Nethelands, derived from https://geotiles.citg.tudelft.nl. <br> The biggest challenge in this assignment was exporting the map as an image, without losing stylised elements.<br>It was thrilling to see how beautiful the map turned out, while serving an important function.
-								</h1>
-							<span class="image main"><img src="images/REM.jpg" alt="" /></span>
-							<span class="image main"><img src="images/REMbig.jpg" alt="" /></span>
-							<p>You can see how the main village of Terschelling, located in the south west of the island is much lower than the rest of the island. This information is highly important for climate catastrophe planning.<p>
-							<p></p>
-							<p></p>
+							<h1>Digital Terrain Model (DTM) of Terschelling</h1>
+
+<p>Below are the final maps of Terschelling: a detailed view of the eastern part with its rivers and an overview of the entire island. These maps highlight the elevation differences crucial for understanding the island's flood risks and planning for climate resilience.</p>
+<span class="image main"><img src="images/REM.jpg" alt="Detailed view of East Terschelling" /></span>
+<span class="image main"><img src="images/REMbig.jpg" alt="Overview of Terschelling Island" /></span>
+<h2>Introduction to Terschelling</h2>
+<p>Terschelling is a beautiful island in the Netherlands, known for its untouched coastal landscapes. Unlike more popular islands like Texel, Terschelling experiences minimal human interference, allowing natural forces to shape its terrain. My personal connection to the island, through my parents' annual visits and my own experience, inspired me to choose this location for my project.</p>
+
+<h2>Process of Creating the Digital Terrain Model</h2>
+<p>I started by importing the Digital Terrain Model (DTM) data for Terschelling, downloaded from the Delft University of Technology's geotiles repository. After unzipping the files, I created a new QGIS project and added the DTM files one by one. I then merged these files into a single GeoTiff, maintaining the original coordinate system. This GeoTiff served as the basis for my analysis.</p>
+<p>To understand the terrain's elevation range, I identified several points' heights and adjusted the GeoTiff's symbology to reflect these values. I chose a color ramp that highlights elevation differences without overwhelming the map's details. Despite experimenting with shading and contour options, I found a simpler color representation to be more effective.</p>
+<p>After finalizing the map's appearance, I created print layouts for both the entire island and a zoomed-in section featuring Terschelling's rivers. Rotating the map slightly improved its visual appeal and efficiency. Finally, I added essential elements like a scale bar, north arrow, and customized legend before exporting the layouts as PDFs and converting them to images.</p>
+
+<h2>Color Scheme and Interpretation</h2>
+<p>I chose a color scheme that uses red to indicate low areas, warning viewers of potential flood risks, while blue represents higher elevations, suggesting safety and tranquility. This choice aims to alert viewers to the dangers of low-lying areas, particularly near the island's rivers. The zoomed-in map of East Terschelling, with its stunning rivers, evokes a sense of beauty and calm.</p>
+<p>The map suggests a high likelihood of historical flooding in Terschelling, especially in the island's lower regions. The eastern part of the island, with its low elevation and river connections, appears particularly vulnerable to flooding.</p>
+
+<h2>Comparing Color Schemes and Elevation Stretches</h2>
+<p>In an alternative map focusing on the island's higher parts, the height profile of the dunes is more prominent, but the rivers lose some detail. This version is useful for highlighting elevated areas but less effective for depicting low-lying flood-prone zones.</p>
+
+<h2>Interesting Observations</h2>
+<p>One surprising observation was that the meadows on Terschelling are mostly low-lying, while the village is situated on higher ground, ensuring its safety. This finding contrasts with other parts of the Netherlands, where fields are typically low due to peatland shrinkage. Terschelling's soil composition, likely a mix of sand and regular soil, differs significantly from mainland peatlands.</p>
+
+
+
+<p>These maps were created in QGIS using DTM data, showcasing the island's terrain and emphasizing areas vulnerable to flooding. The biggest challenge was exporting the map without losing stylistic elements, but the end result is both beautiful and functional, offering valuable insights for climate catastrophe planning.</p>
+
 						</div>
 					</div>
 
@@ -62,42 +81,7 @@
 					<footer id="footer">
 						<div class="inner">
 							<section>
-								<h2>Get in touch</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+					
 
 			</div>
 
