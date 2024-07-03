@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Land Cover Classification</title>
+		<title>Landcover Classification</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -41,60 +41,54 @@
 						</ul>
 					</nav>
 
-				<!-- Main -->
-					<div id="main">
+				<!-- Main --><div id="main">
 						<div class="inner">
-							<h1>Generic Page</h1>
-							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<h1>Landcover Classification of Amsterdam</h1>
+
+					<!DOCTYPE html>
+
+
+</body>
+</html>
+<h2>Landcover Classification using Unsupervised Pixel-Based Classification</h2>
+<p>Unsupervised pixel-based classification in ArcGIS Pro involves analyzing the spectral signatures of individual pixels in satellite images or aerial photos. Pixels with similar spectral characteristics are grouped together into distinct classes, effectively creating a detailed map of various landcover types across Amsterdam.</p>
+<table style="width:100%">
+  <tr>
+    <td><img src="images/lccmap.jpg" alt="Landcover Classification Map" style="width:940px"/></td> 
+    <td><img src="images/legendlcc.jpg" alt="Legend" style="width:250px" /></td>
+  </tr>
+</table>
+<h2>Strengths & Weaknesses</h2>
+<p>This method excels in identifying specific land or soil types with high precision, offering a more granular view compared to object-based classification. However, it lacks context recognition, making it less effective for distinguishing between similar classes in different contexts. Despite this, it can reveal unexpected classes, providing unique insights.</p>
+
+<h2>Unique Insight</h2>
+<p>One surprising finding from this project was the identification of sandy areas within Amsterdam—something I hadn't anticipated. The precision of this method made it easier to name and categorize landcover classes accurately, enhancing the overall usefulness of the map.</p>
+
+<h2>Steps to Create the Map</h2>
+<p>The map was created in ArcGIS Pro. The steps I followed are:</p>
+<ol>
+    <li>Downloaded satellite imagery of Amsterdam from Sentinel 2 from Google Earth Engine.</li>
+    <li>Imported the imagery into ArcGIS Pro and adjusted the band combination for better visualization.</li>
+    <li>Measured the length and width of each pixel to understand the spatial resolution.</li>
+    <li>Used the spectral profile tool to create spectral profiles for different land cover types.</li>
+    <li>Ran an unsupervised classification using the Classification Wizard in ArcGIS Pro.</li>
+    <li>Renamed the classes from the unsupervised classification and adjusted the symbology to reflect the identified land cover types.</li>
+    <li>Compared the results with supervised and object-based classifications.</li>
+    <li>Generated NDVI to analyze vegetation health.</li>
+</ol>
+
+<h2>Best Classification Scheme</h2>
+<p>The unsupervised pixel-based classification method worked best for my chosen area, which was an urban area. This method excelled because boundaries are hard to recognize on a 10x10m pixel scale in the city, where multiple boundaries can exist within a single pixel. Object-based classification may have worked better in rural areas where objects are larger and more distinct. Supervised pixel classification was less effective as it was challenging to manually identify distinct areas for every category in a highly pixelated urban environment. The computer's ability to detect subtle differences in land properties that I might overlook made unsupervised classification the most effective approach.</p>
+
+
+<p>The map was created in ArcGIS Pro and provides valuable insights into the distribution and types of landcover within Amsterdam, which can be particularly useful for urban planning, environmental studies, and resource management.</p>
+
+						
 						</div>
 					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Get in touch</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
-
+				
 			</div>
-
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
