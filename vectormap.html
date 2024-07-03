@@ -20,10 +20,6 @@
 					<header id="header">
 						<div class="inner">
 
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
-								</a>
 
 							<!-- Nav -->
 								<nav>
@@ -59,7 +55,7 @@ table, th, td
 </style>
 <body>
 
-<h2>Kernel density map of ash trees in Utrecht</h2>
+<h2>Kernel density map of ash trees in Utrecht (2024)</h2>
 
 <table style="width:100%">
   <tr>
@@ -68,14 +64,31 @@ table, th, td
   </tr>
 </table>
 
-<p>To understand the example better, we have added borders to the table.</p>
+
 
 </body>
 </html>
 
-							<p>This is a vector map of ...</p>
-							<p>It was created ...</p>
-							<p>From this map you can see...</p>
+							<p>This is a kernel relative density map of ash trees in Utrecht. Kernel maps are usually used for identifying trends and can be useful in for example epidimiology. This map depicting only Ash trees shows us where in the city there are many ash trees. This can be useful for people with allergies for that certain tree, identifying the possible spread of specific tree diseases, and for predicting where certain animal species may be spotted.</p>
+
+							<p>From this map you can see that ash trees are not evenly distributed over Utrecht, which tells us these trees are probably planted in Clusters, by for example governmental institutions, presumably for the sake of efficiency and low costs.</p>
+							<p>
+								The map was created in ArcGIS Pro. 
+									</p>
+									<p>
+
+								Tree data owned by the municipality of Utrecht were used. These data were uploaded to the map as a hosted feature layer, meaning that ArcGIS online hosts the layer and the data for accessibility purposes. Data of the boundaries of Utrecht were uploaded to the map as a Web Feature Service (WFS) layer owned by the Municipality of Utrecht. In essence, a WFS layer is a read-only version of a hosted feature layer.
+</p><p>
+								Both imported layers are web feature layers, which cannot be edited in itself without ownership of the layers. That is why a duplicate of the tree data was used to create this map
+</p><p>
+								using the Geoprocessing Tool named "Select Layer By Attribute": this enabled me to select only ash trees, and then I created a layer out of this selection of trees (attributes) using the "Export Features" Tool.
+</p><p>
+								I Analysed this new layer using a Kernel density Analysis Tool. This enabled me to show the point data (single trees) in a different manner.
+<p>
+								All units of measure were set to metric system units such as kilometer, so that there is no confusion in interpreting the map.
+
+							</p>
+						
 						</div>
 					</div>
 
