@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>LiDar</title>
+		<title>LiDAR</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,15 +19,12 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="inner">
-
-							
 							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
-
+							<nav>
+								<ul>
+									<li><a href="#menu">Menu</a></li>
+								</ul>
+							</nav>
 						</div>
 					</header>
 
@@ -44,9 +41,67 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>LiDar Museumplein, Amsterdam</h1>
+							<h1>LiDAR Museumplein, Amsterdam</h1>
 							<span class="image main"><img src="images/lidarforwebsite.jpg" alt="" /></span>
-							<p>text</p>
+							
+							<h2>What is LiDAR?</h2>
+							<p>LiDAR, which stands for Light Detection and Ranging, is a remote sensing method used to examine the surface of the Earth. LiDAR systems emit laser pulses and measure the time it takes for these pulses to return after hitting an object. This data is used to create highly accurate, three-dimensional information about the shape of the Earth and its surface characteristics.</p>
+							
+							<h2>Visualization of Museumplein, Amsterdam</h2>
+							<p>The image above is a LiDAR-based 3D visualization of Museumplein, Amsterdam. This visualization highlights the detailed surface characteristics of the area, including buildings, trees, and the terrain. Notable features such as the Concertgebouw, a renowned concert hall in Amsterdam, are clearly visible in the LiDAR model.</p>
+							
+							<h2>Steps Taken to Create the 3D Scene</h2>
+							<p>In this project, I utilized various geospatial tools and data to create a 3D visualization of LiDAR data for Museumplein, Amsterdam. Below are the detailed steps I followed:</p>
+							
+							<h3>1. Downloading the Data</h3>
+							<p>I downloaded the necessary LiDAR data from the <a href="https://geotiles.citg.tudelft.nl/">GeoTiles</a> website. The specific files downloaded included:</p>
+							<ul>
+								<li>0.5m Digital Surface Model (DSM)</li>
+								<li>0.5m Digital Terrain Model (DTM)</li>
+								<li>LAZ file</li>
+								<li>RGB imagery</li>
+							</ul>
+							<p>These files provided comprehensive data for creating an accurate 3D model.</p>
+							
+							<h3>2. Setting Up the Project</h3>
+							<p>I created a new project in ArcGIS Pro and organized the downloaded data into the project folder. This step included:</p>
+							<ul>
+								<li>Creating a new project folder</li>
+								<li>Moving the DSM, DTM, RGB, and LAZ files into this folder</li>
+							</ul>
+
+							<h3>3. Converting LAZ to LAS</h3>
+							<p>Since ArcGIS Pro does not support LAZ files directly, I converted the LAZ file to LAS format:</p>
+							<ul>
+								<li>Used the "Convert LAS" tool in ArcGIS Pro</li>
+								<li>Selected the LAZ file as the input and set the output folder to a new "LAS" folder within the project</li>
+								<li>Ensured the coordinate system was set to RD_New</li>
+							</ul>
+
+							<h3>4. Importing and Visualizing Data</h3>
+							<p>With the data converted and organized, I imported the files into ArcGIS Pro:</p>
+							<ul>
+								<li>Added the DSM, DTM, RGB, and LAS files to the project</li>
+								<li>Configured the display settings to visualize the LAS data effectively</li>
+								<li>Explored different symbology options for the LAS data, including elevation and classification views</li>
+							</ul>
+
+							<h3>5. Creating a Hillshade and 3D View</h3>
+							<p>I created a hillshade layer to enhance the visualization:</p>
+							<ul>
+								<li>Used the Raster Functions in the Imagery Ribbon to create a hillshade from the DSM</li>
+								<li>Adjusted the symbology and transparency to combine the hillshade with the DSM</li>
+							</ul>
+
+							<h3>6. Exporting and Sharing the Scene</h3>
+							<p>Finally, I exported the 3D scene and prepared it for sharing online:</p>
+							<ul>
+								<li>Converted the project to a local 3D scene in ArcGIS Pro</li>
+								<li>Configured the scene properties, including metadata such as title, tags, and description</li>
+								<li>Saved the project and exported the scene to be embedded on the website</li>
+							</ul>
+
+							<p>This process involved a combination of data management, conversion, and visualization techniques using ArcGIS Pro. The final 3D scene provides an interactive view of Museumplein, Amsterdam, showcasing the capabilities of LiDAR data in urban analysis and visualization.</p>
 						</div>
 					</div>
 			</div>
@@ -57,6 +112,5 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
 	</body>
 </html>
